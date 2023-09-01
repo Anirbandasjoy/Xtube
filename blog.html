@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PHero-tube</title>
+    <!-- favicon -->
+    <link rel="shortcut icon" href="./image/icon1.png" type="image/x-icon" />
+    <!-- tailwind and dasi ui link -->
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@3.6.4/dist/full.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-100">
+    <header class="container mx-auto">
+      <div class="navbar bg-base-100 p-5 fixed left-0 right-0 z-30">
+        <div class="navbar-start">
+          <a href="./index.html"> <img src="./image/Logo.png" alt="" /></a>
+        </div>
+
+        <div class="navbar-end">
+          <a
+            href="#"
+            class="btn bg-[#FF1F3D] capitalize rounded-md px-5 text-white"
+            >Blog</a
+          >
+        </div>
+      </div>
+      <hr />
+    </header>
+    <!-- blog -->
+    <main class="container mx-auto mt-32">
+      <div class="bg-blue-500 text-white p-6">
+        <div class="container mx-auto">
+          <h1 class="text-4xl font-semibold">ব্লগ পেজ</h1>
+          <p class="mt-2">By Joy | Aug-31-2023</p>
+        </div>
+      </div>
+
+      <div
+        class="container mx-auto mt-8 grid grid-cols-1 lg:grid-cols-2 my-5 gap-6"
+      >
+        <div class="bg-white rounded-lg shadow-md p-6 space-y-4">
+          <div>
+            <h1 class="text-xl text-center underline mb-3 font-semibold">
+              var, let, const সহজভাবে বুঝানো
+            </h1>
+            <ol class="list-decimal ml-9">
+              <li class="mb-4">
+                <strong>var</strong> দিয়ে ডিক্লেয়ার করা ভ্যারিয়েবলের ফাংশন স্কোপ
+                থাকে। এটি ডিক্লেয়ার করা ব্লকের বাইরেও অ্যাক্সেস করা যায়, যেহেতু
+                এর স্কোপ বৈশিষ্ট্য দেয় না। এই ভ্যারিয়েবলের মান বার বার পরিবর্তন
+                করা যায়।
+              </li>
+              <li class="mb-4">
+                <strong>let</strong> দিয়ে ডিক্লেয়ার করা ভ্যারিয়েবলের ব্লক স্কোপ
+                থাকে। এটি কেবল ডিক্লেয়ার করা ব্লকের মধ্যেই অ্যাক্সেস করা যায়।
+                ভ্যারিয়েবলের মান বার বার পরিবর্তন করা যায়।
+              </li>
+              <li class="mb-4">
+                <strong>const</strong> দিয়ে ডিক্লেয়ার করা ভ্যারিয়েবলের ব্লক
+                স্কোপ থাকে। এটি কেবল ডিক্লেয়ার করা ব্লকের মধ্যেই অ্যাক্সেস করা
+                যায়। এই ভ্যারিয়েবলের মান একবার ডিক্লেয়ার করার পর পরিবর্তন করা
+                যায় না।
+              </li>
+            </ol>
+          </div>
+        </div>
+        <div class="bg-white rounded-lg shadow-md p-6 space-y-4">
+          <div>
+            <h1 class="text-xl text-center underline mb-3 font-semibold">
+              null এবং undefined এর ব্যবহার ক্ষেত্র !
+            </h1>
+            <ol class="list-decimal ml-9">
+              <li class="mb-4">
+                <strong>null</strong> যেটা আসলে কোনও মান থাকা না এমন সংকেত। এটি
+                ভ্যারিয়েবলে কোনও মান নেই বা খালি থাকতে পারে। ডাটা টাইপ চেকিং এর
+                সময় নাল ব্যবহার করা যায় । যদি মান না থাকে তাহলে ধরে নেওয়া যায় ।
+              </li>
+              <li class="mb-4">
+                <strong>undefined</strong> যখন কোনও ভ্যারিয়েবলে মান প্রদান করা
+                হয় না, সেটা undefined দেখায় । undefined দেখায় যখন ভ্যারিয়েবলের
+                মান নেই বা সেটা প্রদান করা হয় নি।
+              </li>
+            </ol>
+          </div>
+        </div>
+        <div class="bg-white rounded-lg shadow-md p-6 space-y-4">
+          <div>
+            <h1 class="text-xl text-center underline mb-3 font-semibold">
+              REST API বলতে কি বোঝেন?
+            </h1>
+            <ol class="list-decimal ml-9">
+              <li class="mb-4">
+                <strong>REST</strong> api একটি গুরুত্বপূর্ণ পরিষেবা যা ওয়েব
+                ডেভেলপমেন্ট এ ব্যবহৃত হয়। এটি রেস্টফুল এপ্লিকেশন প্রোগ্রামিং
+                ইন্টারফেসের সংক্ষেপ। এর মাধ্যমে ডেটা একটি ওয়েব সার্ভার থেকে অন্য
+                ওয়েব এপ্লিকেশনে পাঠানো হয়। এই এপাই ব্যবহার করে আমরা ডেটা রিমোটলি
+                অ্যাক্সেস করতে পারি এবং এপ্লিকেশন এবং সার্ভার মধ্যে কমিউনিকেশন
+                স্থাপন করতে পারি। একটি রেস্টফুল এপাই ডিজাইন করার জন্য HTTP
+                প্রোটোকল ব্যবহার করা হয়, যা মূলত স্থানীয় এবং গ্লোবাল নেটওয়ার্কে
+                কমিউনিকেশন সাবলে। এই প্রোটোকলের বিভিন্ন মেথড ব্যবহার করে আরইএসটি
+                এপাই তৈরি করা হয়, যেগুলি GET, POST, PUT, এবং DELETE ইত্যাদি। এই
+                মেথড গুলি ডেটা রিড, সেভ, আপডেট, এবং ডিলিট করতে ব্যবহার করা হয়।
+                একটি রেস্টফুল এপাই প্রতিষ্ঠানের এপ্লিকেশন ডেভেলপমেন্টে অত্যন্ত
+                গুরুত্বপূর্ণ এবং সাহায্যকারী যেতে পারে। এর মাধ্যমে ব্যবহারকারীরা
+                আসন্ন ডেটা অ্যাক্সেস করতে পারে এবং অ্যাপ্লিকেশন সহজে কাস্টমাইজ
+                করতে পারে। রেস্টফুল এপাই ব্যবহার করে ওয়েব ডেভেলপমেন্ট এ একটি
+                নেতৃত্বশীল দিক সৃষ্টি করতে সাহায্য করে, যা দীর্ঘস্থায়ী এবং সুস্থ
+                এপ্লিকেশন তৈরি করতে সাহায্য করে।
+              </li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

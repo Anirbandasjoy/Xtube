@@ -15,8 +15,76 @@
     />
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
+  <style>
+    .spinContaier {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 80vh;
+    }
+    .spinner {
+      width: 60px;
+      height: 60px;
+      border: 6px solid rgba(0, 0, 0, 0.1);
+      border-left-color: #3498db;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
   <body>
-    <h1>hello i am assignment 6</h1>
+    <header class="container mx-auto">
+      <div
+        class="navbar bg-base-100 p-5 fixed left-0 right-0 z-30 container mx-auto"
+      >
+        <div class="navbar-start">
+          <img class="w-24 sm:w-44" src="./image/Logo.png" alt="" />
+        </div>
+        <div class="navbar-center lg:flex">
+          <button
+            onclick="shortViews()"
+            class="btn rounded-sm capitalize ml-5 sm:mr-0"
+            id="sortBtn"
+          >
+            Sort by view
+          </button>
+        </div>
+        <div class="navbar-end">
+          <a
+            href="./blog.html"
+            class="btn bg-[#FF1F3D] capitalize rounded-md px-5 text-white"
+            >Blog</a
+          >
+        </div>
+      </div>
+      <hr />
+    </header>
+
+    <main class="container mx-auto mt-28">
+      <hr />
+      <!-- spiner add -->
+      <div id="spinContaier" class="spinContaier">
+        <div class="spinner" id="spiner"></div>
+      </div>
+      <div
+        class="tabs tabs-boxed bg-white mx-20 flex-wrap flex justify-center gap-3 mt-8 mb-8"
+        id="tabContainer"
+      ></div>
+      <!-- couse card container  -->
+      <div
+        class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4"
+        id="courseContainer"
+      ></div>
+
+      <div class="mt-20" id="notFoundContainer"></div>
+    </main>
 
     <script src="./index.js"></script>
   </body>
