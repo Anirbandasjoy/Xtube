@@ -45,18 +45,7 @@ const displayCategoryButton = (data) => {
 };
 const setActiveButton = (button) => {
   const allButtons = document.querySelectorAll(".tabBtn");
-  allButtons[3].addEventListener("click", () => {
-    sortBtn.disabled = true;
-  });
-  allButtons[0].addEventListener("click", () => {
-    sortBtn.disabled = false;
-  });
-  allButtons[1].addEventListener("click", () => {
-    sortBtn.disabled = false;
-  });
-  allButtons[2].addEventListener("click", () => {
-    sortBtn.disabled = false;
-  });
+
   allButtons.forEach((btn) => {
     btn.classList.remove("bg-[#FF1F3D]");
   });
@@ -120,7 +109,9 @@ const displayCategoryData = async (id) => {
         </p>
       `;
       notFoundContainer.appendChild(div);
+      sortBtn.disabled = true;
     } else {
+      sortBtn.disabled = false;
       categoryData.data?.map((course) => {
         const seconds = Math.floor(course.others.posted_date);
         const hours = Math.floor(seconds / 3600);
