@@ -1,3 +1,5 @@
+const sortBtn = document.getElementById("sortBtn");
+sortBtn.disabled = false;
 const loadCategory = async () => {
   const spiner = document.getElementById("spiner");
   const spinContaier = document.getElementById("spinContaier");
@@ -43,6 +45,18 @@ const displayCategoryButton = (data) => {
 };
 const setActiveButton = (button) => {
   const allButtons = document.querySelectorAll(".tab");
+  allButtons[3].addEventListener("click", () => {
+    sortBtn.disabled = true;
+  });
+  allButtons[0].addEventListener("click", () => {
+    sortBtn.disabled = false;
+  });
+  allButtons[1].addEventListener("click", () => {
+    sortBtn.disabled = false;
+  });
+  allButtons[2].addEventListener("click", () => {
+    sortBtn.disabled = false;
+  });
   allButtons.forEach((btn) => {
     btn.classList.remove("tab-active");
   });
@@ -96,7 +110,6 @@ const displayCategoryData = async (id) => {
       `https://openapi.programming-hero.com/api/videos/category/${id}`
     );
     const categoryData = await res.json();
-    console.log(categoryData);
 
     if (!categoryData.data || categoryData?.data.length === 0) {
       const div = document.createElement("div");
@@ -157,6 +170,8 @@ const displayCategoryData = async (id) => {
 
 const shortViews = async () => {
   const courseContainer = getId("courseContainer");
+  const notFoundContainer = getId("notFoundContainer"); // Change "courseContainer" to "notFoundContainer"
+
   courseContainer.innerHTML = "";
   const res = await fetch(
     "https://openapi.programming-hero.com/api/videos/category/1000"
@@ -169,8 +184,17 @@ const shortViews = async () => {
       secondObject.others.views.slice(0, -1) -
       firstObject.others.views.slice(0, -1)
   );
+  if (allData.length === 0 || !allData) {
+    const div = document.createElement("div");
+    div.innerHTML = `
+        <img class="mx-auto" src="./image/icon.png" />
+        <p class="font-bold text-center mt-4 text-xl">
+          Oops!! Sorry, There is no <br> content here
+        </p>
+      `;
+    notFoundContainer.appendChild(div);
+  }
   allData?.map((course) => {
-    console.log(course);
     const seconds = Math.floor(course.others.posted_date);
     const hours = Math.floor(seconds / 3600);
     const minutes = Math.floor((seconds % 3600) / 60);
