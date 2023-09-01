@@ -25,7 +25,7 @@ const displayCategoryButton = (data) => {
   const categoryContainer = getId("tabContainer");
   data?.map((categoryBtn) => {
     const button = document.createElement("a");
-    button.className = "tab capitalize btn rounded-sm";
+    button.className = " capitalize tabBtn btn rounded-md";
     button.innerText = categoryBtn.category;
     button.onclick = () => {
       displayCategoryData(categoryBtn.category_id);
@@ -37,14 +37,14 @@ const displayCategoryButton = (data) => {
     categoryContainer.appendChild(div);
   });
 
-  const button = categoryContainer.querySelector(".tab");
+  const button = categoryContainer.querySelector(".tabBtn");
   if (button) {
     setActiveButton(button);
   }
   displayAllCategoryData();
 };
 const setActiveButton = (button) => {
-  const allButtons = document.querySelectorAll(".tab");
+  const allButtons = document.querySelectorAll(".tabBtn");
   allButtons[3].addEventListener("click", () => {
     sortBtn.disabled = true;
   });
@@ -58,9 +58,9 @@ const setActiveButton = (button) => {
     sortBtn.disabled = false;
   });
   allButtons.forEach((btn) => {
-    btn.classList.remove("tab-active");
+    btn.classList.remove("bg-[#FF1F3D]");
   });
-  button.classList.add("tab-active");
+  button.classList.add("bg-[#FF1F3D]");
 };
 
 const displayAllCategoryData = async () => {
